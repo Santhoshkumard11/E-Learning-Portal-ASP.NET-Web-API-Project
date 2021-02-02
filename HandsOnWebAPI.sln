@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandsOnWebAPI", "HandsOnWebAPI.csproj", "{DE40D727-4166-45FB-93B7-968D4FB957B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandsOnWebAPI.Tests", "..\HandsOnWebAPI.Tests\HandsOnWebAPI.Tests.csproj", "{4DD30A71-1434-4720-948F-CBEB53B0F5FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE40D727-4166-45FB-93B7-968D4FB957B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE40D727-4166-45FB-93B7-968D4FB957B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE40D727-4166-45FB-93B7-968D4FB957B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE40D727-4166-45FB-93B7-968D4FB957B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08ED8464-0401-4F33-8149-ECC04E02E590}
+	EndGlobalSection
+EndGlobal
