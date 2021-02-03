@@ -19,6 +19,6 @@ namespace HandsOnWebAPI.Models
         //Foreign Key
         public int DepartmentId { get; set; }
         //Navigation Property
-        public Decimal Department { get; set; }
+        public Department Department { get; set; }
     }
 }

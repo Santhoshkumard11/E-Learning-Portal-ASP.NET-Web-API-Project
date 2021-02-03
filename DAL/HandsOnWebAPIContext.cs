@@ -23,6 +23,10 @@ namespace HandsOnWebAPI.Models
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
 
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
