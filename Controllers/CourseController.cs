@@ -14,7 +14,7 @@ namespace HandsOnWebAPI.Controllers
     {
         // GET: api/Course
 
-        static List<Course> courses = new List<Course>() {
+        static List<Course> coursesList = new List<Course>() {
         new Course() {Id = 1, CourseName="Android",Trainer="Shawn",Fees=12000,
          CourseDescription="Android is a mobile operating system development"},
         new Course() {Id = 2, CourseName="asp.net",Trainer="Kevin",Fees=22000,
@@ -26,16 +26,16 @@ namespace HandsOnWebAPI.Controllers
         };
 
 
-        public IEnumerable<string> Get()
+        public List<Course> Get()
         {
-            return new string[] { "value1", "value2" };
+            return coursesList;
         }
 
         // GET: api/Course/5
         public HttpResponseMessage Get(string courseName)
         {
 
-            Course course = courses.Find(c => c.CourseName == courseName);
+            Course course = coursesList.Find(c => c.CourseName == courseName);
 
             if(course != null)
             {
@@ -51,8 +51,10 @@ namespace HandsOnWebAPI.Controllers
         }
 
         // POST: api/Course
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Course course)
         {
+            coursesList.Add(course);
+
         }
 
         // PUT: api/Course/5
