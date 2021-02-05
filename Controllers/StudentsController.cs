@@ -5,6 +5,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Data.Entity.Migrations;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 
 namespace HandsOnWebAPI.Controllers
 {
@@ -33,7 +36,36 @@ namespace HandsOnWebAPI.Controllers
 
         }
 
+        public HttpResponseMessage Put(int id, [FromBody] Student student)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, "Make sure you have all the model values correct!!");
+            }
 
+            db.Entry(student).State = EntityState.Modified;
 
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!StudentExists(id))
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, $"Student with the {id} doesn't exist!!");
+                }
+               
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK,student);
+
+        }
+
+        public bool StudentExists(int id)
+        {
+
+            return db.Students.Count(s => s.Id == id) > 0;
+        }
     }
 }
