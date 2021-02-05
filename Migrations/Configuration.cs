@@ -2,6 +2,7 @@ namespace HandsOnWebAPI.Migrations
 {
     using HandsOnWebAPI.Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -40,6 +41,13 @@ namespace HandsOnWebAPI.Migrations
             new Employee { Id = 3, FirstName = "Sankar", LastName = "Narayanan", DepartmentId = 101, Salary = 20000 },
             new Employee { Id = 4, FirstName = "Steve", LastName = "Rogers", DepartmentId = 100, Salary = 20000 }
             );
+
+
+            context.Students.AddOrUpdate(
+                new Student() { Id = 1, FirstName = "Jerome", LastName = "Smith", Gender = "Male", Address = "13" },
+                new Student() { Id = 2, FirstName = "Peter", LastName = "Cruise", Gender = "Male", Address = "12" },
+                new Student() { Id = 3, FirstName = "Sam", LastName = "Allen", Gender = "Female", Address = "13" }
+                );
         }
     }
 }
