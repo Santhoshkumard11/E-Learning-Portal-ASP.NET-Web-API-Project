@@ -1,6 +1,7 @@
 ﻿using HandsOnWebAPI.Controllers;
 using HandsOnWebAPI.Models;
 using NUnit.Framework;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace HandsOnWebAPI.Tests.Controllers
@@ -13,11 +14,11 @@ namespace HandsOnWebAPI.Tests.Controllers
         {
             EmployeesController controller = new EmployeesController();
 
-            IQueryable<Employee> result = controller.GetEmployees();
+            List<Employee> result = controller.GetEmployees();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual("Santhosh", result.ToArray()[0]);
-            Assert.AreEqual("Santhosh", result.ElementAt(1));
+            Assert.AreEqual("Sindhuja", result.ToArray()[0].FirstName);
+            Assert.AreEqual("Steve", result.ToArray()[3].FirstName);
         }
     }
 }

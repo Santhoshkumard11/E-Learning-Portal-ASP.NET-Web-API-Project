@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandsOnWebAPI", "HandsOnWebAPI.csproj", "{DE40D727-4166-45FB-93B7-968D4FB957B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandsOnWebAPI.Tests", "..\HandsOnWebAPI.Tests\HandsOnWebAPI.Tests.csproj", "{4DD30A71-1434-4720-948F-CBEB53B0F5FB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,14 +21,6 @@ Global
 		{DE40D727-4166-45FB-93B7-968D4FB957B2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DE40D727-4166-45FB-93B7-968D4FB957B2}.Release|x64.ActiveCfg = Release|x64
 		{DE40D727-4166-45FB-93B7-968D4FB957B2}.Release|x64.Build.0 = Release|x64
-		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Debug|x64.ActiveCfg = Debug|x64
-		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Debug|x64.Build.0 = Debug|x64
-		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Release|x64.ActiveCfg = Release|x64
-		{4DD30A71-1434-4720-948F-CBEB53B0F5FB}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

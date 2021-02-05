@@ -15,12 +15,12 @@ namespace HandsOnWebAPI.Controllers
 {
     public class EmployeesController : ApiController
     {
-        private HandsOnWebAPIContext db = new HandsOnWebAPIContext();
+        private readonly HandsOnWebAPIContext db = new HandsOnWebAPIContext();
 
         // GET: api/Employees
-        public IQueryable<Employee> GetEmployees()
+        public List<Employee> GetEmployees()
         {
-            return db.Employees;
+            return db.Employees.ToList();
         }
 
         // GET: api/Employees/5
@@ -54,7 +54,7 @@ namespace HandsOnWebAPI.Controllers
 
             try
             {
-                await db.SaveChangesAsync();
+                await db.SaveChangesAsync().ConfigureAwait(false);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -81,7 +81,7 @@ namespace HandsOnWebAPI.Controllers
             }
 
             db.Employees.Add(employee);
-            await db.SaveChangesAsync();
+            await db.SaveChangesAsync().ConfigureAwait(false);
 
             return CreatedAtRoute("DefaultApi", new { id = employee.Id }, employee);
         }
