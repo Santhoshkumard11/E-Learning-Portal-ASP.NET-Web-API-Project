@@ -26,7 +26,7 @@ namespace HandsOnWebAPI.Controllers
 
             if (result != null)
             {
-             return Request.CreateResponse(HttpStatusCode.OK, result);
+                return Request.CreateResponse(HttpStatusCode.OK, result);
 
             }
             else
@@ -55,10 +55,10 @@ namespace HandsOnWebAPI.Controllers
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, $"Student with the {id} doesn't exist!!");
                 }
-               
+
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK,student);
+            return Request.CreateResponse(HttpStatusCode.OK, student);
 
         }
 
@@ -67,5 +67,32 @@ namespace HandsOnWebAPI.Controllers
 
             return db.Students.Count(s => s.Id == id) > 0;
         }
+
+
+        public HttpResponseMessage Post([FromBody] Student student)
+        {
+
+            
+
+            if(!ModelState.IsValid)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, "Fill all the fields of the student");
+            }
+
+            try
+            {
+
+                db.Students.Add(student);
+                db.SaveChanges();
+            }
+            catch ( Exception ex)
+            {
+
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.Created, student);
+        }
+
     }
 }
